@@ -2,6 +2,15 @@
 
 Kaggle `Predicting Airline Satisfaction`（Playground Series S6E10）的个人参赛项目。任务是根据乘客和航班信息预测满意度，本地评估指标为 ROC-AUC。
 
+## 比赛成绩
+
+- 最终 Private Leaderboard ROC-AUC：`0.96238`
+- Public Leaderboard ROC-AUC：`0.96181`
+- 最终排名：`222 / 3734`
+- 最终提交文件：`submission_best_after_experiments.csv`
+
+最终比赛成绩以 Private Leaderboard 为准。
+
 ## 当前结果
 
 项目里保留了两类验证结果。严格本地验证与公开 OOF 堆叠需要分开理解。
