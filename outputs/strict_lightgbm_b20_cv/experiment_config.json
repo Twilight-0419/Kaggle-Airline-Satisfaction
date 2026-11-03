@@ -1,0 +1,36 @@
+{
+  "cohort": {
+    "rows": 280000,
+    "method": "stratified train_test_split",
+    "random_state": 42
+  },
+  "outer_cv": {
+    "splitter": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 42
+  },
+  "inner_target_encoding_cv": {
+    "splitter": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "seed_per_outer_fold": "2026 + fold number"
+  },
+  "A": "raw features only",
+  "B": "same raw features plus exact Flight Distance × Class and Flight Distance × Type of Travel target encodings",
+  "smoothing": 20,
+  "model": "LightGBM, fixed 600 rounds; no early stopping; parameters copied from notebook/main_lightgbm_backup.ipynb",
+  "outer_validation_labels": "used only for final fold AUC; excluded from feature encoding, early stopping, feature selection and parameter selection",
+  "fits": 10,
+  "output_directory": "C:\\Users\\User\\Desktop\\Predicting Airline Satisfaction\\outputs\\strict_lightgbm_b20_cv",
+  "test_data": "not read; no test predictions generated",
+  "overwrite_policy": "write new files only under outputs/strict_lightgbm_b20_cv",
+  "runtime_reference_seconds": {
+    "historic_raw_lgb_280k_5fold": 312.4,
+    "estimated_per_variant_280k_fixed600": 360,
+    "estimated_total_seconds": 720
+  },
+  "actual_total_fit_predict_seconds": 215.619332502014,
+  "observed_total_wall_seconds_approx": 238.0,
+  "fold_wall_seconds_source": "Console-reported outer fold elapsed times; rounded to 0.1 seconds."
+}

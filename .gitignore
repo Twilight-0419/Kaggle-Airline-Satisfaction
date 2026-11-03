@@ -1,0 +1,70 @@
+# Local competition data
+/data/*
+!/data/README.md
+
+# Large generated artifacts
+*.npy
+*.npz
+*.parquet
+*.pkl
+*.pickle
+*.joblib
+*.zip
+*.whl
+*.onnx
+*.pt
+*.pth
+*.ckpt
+
+# Generated experiment output
+/outputs/*
+!/outputs/research_run_001/
+/outputs/research_run_001/*
+!/outputs/research_run_001/experiment_config.json
+!/outputs/research_run_001/experiment_records.jsonl
+!/outputs/research_run_001/experiments.csv
+!/outputs/research_run_001/progress.json
+!/outputs/research_run_001/run.log
+!/outputs/research_run_001/split_manifest.json
+!/outputs/research_run_001/stage4_full_dev_ab/
+/outputs/research_run_001/stage4_full_dev_ab/*
+!/outputs/research_run_001/stage4_full_dev_ab/summary.csv
+
+!/outputs/strict_lightgbm_b20_cv/
+/outputs/strict_lightgbm_b20_cv/*
+!/outputs/strict_lightgbm_b20_cv/cv_summary.csv
+!/outputs/strict_lightgbm_b20_cv/experiment_config.json
+!/outputs/strict_lightgbm_b20_cv/fold_results.csv
+!/outputs/strict_lightgbm_b20_cv/paired_fold_auc.csv
+
+# Third-party notebooks, wheels, and local dependency bundles
+/某个公开算法*/
+
+# Training caches and runtime files
+/catboost_info/
+
+# Python and notebook caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets and machine-specific configuration
+.env
+.env.*
+*.secret
+*.key
+*.pem

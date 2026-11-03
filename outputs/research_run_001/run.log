@@ -1,0 +1,14 @@
+2026-10-30 01:51:34 | project and environment audit complete
+2026-10-30 01:51:51 | prepared splits dev=629671 locked=69964
+2026-10-30 01:52:55 | B1_lgb_raw fold=1 auc=0.958285701 features=26 seconds=16.5
+2026-10-30 01:53:16 | B1_lgb_raw fold=2 auc=0.959025046 features=26 seconds=20.9
+2026-10-30 01:53:33 | B1_lgb_raw fold=3 auc=0.959025002 features=26 seconds=16.5
+2026-10-30 01:53:50 | B1_lgb_raw fold=4 auc=0.959276972 features=26 seconds=16.6
+2026-10-30 01:54:07 | B1_lgb_raw fold=5 auc=0.959267899 features=26 seconds=16.9
+2026-10-30 01:54:10 | complete B1_lgb_raw mean_auc=0.958976124 oof_auc=0.958970435
+2026-10-30 01:54:35 | B2_lgb_b20 fold=1 auc=0.959476739 features=28 seconds=22.5
+2026-10-30 01:54:55 | B2_lgb_b20 fold=2 auc=0.960405879 features=28 seconds=20.4
+2026-10-30 01:55:14 | B2_lgb_b20 fold=3 auc=0.960262656 features=28 seconds=18.5
+2026-10-30 01:55:44 | B2_lgb_b20 fold=4 auc=0.960245945 features=28 seconds=29.6
+2026-10-30 01:56:06 | B2_lgb_b20 fold=5 auc=0.960653347 features=28 seconds=21.7
+2026-10-30 01:56:09 | complete B2_lgb_b20 mean_auc=0.960208913 oof_auc=0.960200000

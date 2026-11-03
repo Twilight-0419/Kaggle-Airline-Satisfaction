@@ -1,0 +1,18 @@
+{
+  "train_rows": 699635,
+  "development_rows": 629671,
+  "locked_rows": 69964,
+  "development_positive_rate": 0.44357291347386174,
+  "locked_positive_rate": 0.44357097936081413,
+  "lock_seed": 20261030,
+  "outer_cv_seed": 42,
+  "fold_valid_rows": [
+    125935,
+    125934,
+    125934,
+    125934,
+    125934
+  ],
+  "locked_label_policy": "not read by any selection stage; only stage lock evaluates it after candidates are frozen",
+  "historical_caveat": "This run-level lock was not isolated from prior project experiments that may have used the full training set."
+}

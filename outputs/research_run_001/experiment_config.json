@@ -1,0 +1,87 @@
+{
+  "run_name": "research_run_001",
+  "created_at": "2026-10-30 01:51:31 +0800",
+  "root": "C:\\Users\\User\\Desktop\\Predicting Airline Satisfaction",
+  "python_executable": "C:\\Users\\User\\anaconda3\\envs\\movie\\python.exe",
+  "target": "satisfaction",
+  "id_column": "id",
+  "train_file_sha256": "2313b65c74e6994f01c2628aae82d2f97aa6f74a81950172ff83864837c98b36",
+  "test_file_sha256": "ff7932747f27c5274de904194ac38b4d088ea4f9bb005ae74f0d619fb893a9b6",
+  "lock": {
+    "fraction": 0.1,
+    "stratified": true,
+    "random_state": 20261030
+  },
+  "development_cv": {
+    "type": "StratifiedKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 42
+  },
+  "target_encoding": {
+    "keys": [
+      [
+        "Flight Distance",
+        "Class"
+      ],
+      [
+        "Flight Distance",
+        "Type of Travel"
+      ]
+    ],
+    "smoothing": 20,
+    "formula": "(group_target_sum + smoothing * fold_prior) / (group_count + smoothing)",
+    "train_encoding": "inner five-fold OOF within each outer-training partition",
+    "validation_encoding": "statistics from outer-training labels only",
+    "locked_encoding": "statistics from complete development labels only"
+  },
+  "missing_value_policy": "Arrival Delay in Minutes mean imputed from the fitting partition only",
+  "early_stopping": "disabled for all development OOF and locked fits",
+  "test_policy": "schema/row audit only; no test predictions or submissions generated",
+  "base_parameters": {
+    "lightgbm": {
+      "objective": "binary",
+      "metric": "auc",
+      "n_estimators": 600,
+      "learning_rate": 0.03,
+      "num_leaves": 63,
+      "min_child_samples": 20,
+      "subsample": 0.85,
+      "subsample_freq": 1,
+      "colsample_bytree": 0.7,
+      "reg_lambda": 2.0,
+      "n_jobs": 8,
+      "random_state": 42,
+      "verbosity": -1
+    },
+    "xgboost": {
+      "objective": "binary:logistic",
+      "eval_metric": "auc",
+      "n_estimators": 300,
+      "learning_rate": 0.05,
+      "max_depth": 7,
+      "min_child_weight": 10,
+      "subsample": 0.85,
+      "colsample_bytree": 0.7,
+      "reg_lambda": 2.0,
+      "tree_method": "hist",
+      "device": "cpu",
+      "n_jobs": 8,
+      "random_state": 42
+    },
+    "catboost": {
+      "iterations": 300,
+      "learning_rate": 0.03,
+      "depth": 7,
+      "l2_leaf_reg": 3.0,
+      "loss_function": "Logloss",
+      "eval_metric": "AUC",
+      "random_seed": 42,
+      "thread_count": 8,
+      "verbose": false,
+      "allow_writing_files": false
+    }
+  },
+  "overwrite_policy": "new files only under outputs/research_run_001; historical files are never modified",
+  "known_validation_limitation": "The new lock is untouched by this run's selection, but historical project experiments previously used the full training set; it is not guaranteed to be globally unseen across prior work."
+}
